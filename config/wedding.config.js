@@ -5,8 +5,8 @@ window.WEDDING_CONFIG = {
   },
 
   couple: {
-    partnerOne: "Vino Sri ",   // 🔥 keep but empty (prevents crash)
-    partnerTwo: "Vetrimaran ",
+    partnerOne: " Vetrimaran ",   // 🔥 keep but empty (prevents crash)
+    partnerTwo: "Vino Sri",
     monogram: "",
     eyebrow: "Kathu Kuthu & Punitha Neerattu Vizha"
   },
