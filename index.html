@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <meta name="description" content="A premium, modular wedding invitation experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="components/intro/intro.css">
+  <link rel="stylesheet" href="components/hero/hero.css">
+  <link rel="stylesheet" href="components/story/story.css">
+  <link rel="stylesheet" href="components/details/details.css">
+  <link rel="stylesheet" href="components/gallery/gallery.css">
+  <link rel="stylesheet" href="components/closing/closing.css">
+</head>
+<body>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-halo" aria-hidden="true"></div>
+
+  <div id="intro-root"></div>
+
+  <main id="main-site" class="site-shell" data-site-state="locked" aria-hidden="true">
+    <div id="hero-root"></div>
+    <div id="story-root"></div>
+    <div id="details-root"></div>
+    <div id="gallery-root"></div>
+    <div id="closing-root"></div>
+  </main>
+
+  <noscript>
+    <div class="noscript-message">
+      This invitation uses JavaScript to render its sections. Please enable JavaScript to view it.
+    </div>
+  </noscript>
+
+  <script src="config/wedding.config.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/animation.js"></script>
+  <script src="scripts/audio.js"></script>
+  <script src="components/intro/intro.js"></script>
+  <script src="components/hero/hero.js"></script>
+  <script src="components/story/story.js"></script>
+  <script src="components/details/details.js"></script>
+  <script src="components/gallery/gallery.js"></script>
+  <script src="components/closing/closing.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+/* ===============================
+   BASE
+================================ */
+.closing {
+  min-height: auto;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+
+  background: linear-gradient(180deg, #0c0703, #1a1208);
+  color: #fff;
+}
+
+.closing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,200,120,0.12), transparent 60%);
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.closing-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 720px;
+}
+
+/* ===============================
+   CARD
+================================ */
+.closing-message {
+  padding: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+
+  border: 1px solid rgba(255,200,120,0.15);
+}
+
+/* ===============================
+   TEXT
+================================ */
+.closing-pre {
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  letter-spacing: 0.35em;
+  color: #d4af37;
+  margin-bottom: 1.2rem;
+}
+
+.closing-quote {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.closing-quote em {
+  color: #d4af37;
+}
+
+.closing-sub {
+  margin: 1rem 0 2rem;
+  font-size: clamp(0.95rem, 3vw, 1.1rem);
+  color: rgba(255,255,255,0.75);
+}
+
+/* ===============================
+   BADGE
+================================ */
+.closing-date-badge {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,200,120,0.2);
+}
+
+.closing-badge-item {
+  font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+  letter-spacing: 0.2em;
+}
+
+.closing-badge-dot {
+  width: 0.25rem;
+  height: 0.25rem;
+  background: #d4af37;
+  border-radius: 50%;
+}
+
+/* ===============================
+   FAMILY SECTION
+================================ */
+.closing-family {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.family-block {
+  margin-bottom: 1.6rem;
+}
+
+.family-title {
+  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+.family-names {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.9);
+}
+
+/* subtle divider */
+.family-block:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 45%;
+  height: 1px;
+  margin: 1rem auto 0;
+  background: rgba(255,200,120,0.25);
+}
+
+/* ===============================
+   CONTACT
+================================ */
+.closing-contact {
+  margin-top: 2rem;
+  font-size: clamp(0.9rem, 3vw, 1.05rem);
+  letter-spacing: 0.12em;
+  color: #d4af37;
+}
+
+/* ===============================
+   SYMBOLS
+================================ */
+.closing-symbol {
+  position: absolute;
+  color: rgba(255,200,120,0.15);
+  animation: closing-float 7s ease-in-out infinite;
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes closing-float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+@media (max-width: 640px) {
+  .closing {
+    padding: 3rem 0.8rem;
+  }
+
+  .closing-message {
+    padding: 1.8rem 1rem;
+  }
+
+  .family-names {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .closing-contact {
+    font-size: 1rem;
+  }
+}

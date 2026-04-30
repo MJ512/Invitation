@@ -1,0 +1,36 @@
+:root {
+  --ivory: #faf6f0;
+  --cream: #f5ede0;
+  --parchment: #eadbc8;
+  --champagne: #f0e2cf;
+  --gold: #c9a84c;
+  --gold-soft: #e5cb92;
+  --gold-deep: #a07a30;
+  --rose: #d4a0a0;
+  --rose-deep: #b87070;
+  --ink: #2a1f14;
+  --ink-soft: #5d4b3d;
+  --ink-muted: #8b7664;
+  --shadow: rgba(31, 20, 12, 0.18);
+  --section-space: clamp(5.75rem, 10vw, 8rem);
+  --content-width: min(1120px, calc(100vw - 2rem));
+  --glass-blur: 24px;
+  --glass-saturation: 1.35;
+  --glass-fill: linear-gradient(145deg, rgba(255, 251, 246, 0.22), rgba(255, 239, 220, 0.08));
+  --glass-fill-strong: linear-gradient(145deg, rgba(255, 250, 244, 0.28), rgba(255, 236, 214, 0.12));
+  --glass-border: rgba(255, 244, 230, 0.28);
+  --glass-edge: rgba(255, 255, 255, 0.34);
+  --glass-glow: rgba(201, 168, 76, 0.18);
+  --glass-shadow:
+    0 22px 60px rgba(30, 20, 12, 0.16),
+    0 1px 0 rgba(255, 255, 255, 0.38) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.12) inset;
+  --radius-xl: 2rem;
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-gentle: cubic-bezier(0.33, 1, 0.68, 1);
+  --transition-fast: 180ms var(--ease-gentle);
+  --transition-medium: 420ms var(--ease-silk);
+  --transition-slow: 820ms var(--ease-silk);
+}

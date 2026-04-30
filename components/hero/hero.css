@@ -1,0 +1,272 @@
+/* ===============================
+   HERO BASE
+================================ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding-block: clamp(4rem, 8vw, 7rem);
+  overflow: hidden;
+
+  background: url("../../assets/images/temple.jpg") center/cover no-repeat;
+
+  animation: heroZoom 12s ease-in-out infinite alternate;
+}
+
+/* ===============================
+   CINEMATIC OVERLAY
+================================ */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.65), transparent 45%),
+    radial-gradient(circle at center, rgba(255, 200, 100, 0.25), transparent 60%);
+}
+
+/* ===============================
+   SIDE GLOW
+================================ */
+.hero-cloud {
+  position: absolute;
+  top: 0;
+  width: 140px;
+  height: 100%;
+  filter: blur(80px);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.hero-cloud--left {
+  left: 0;
+  background: rgba(255, 180, 80, 0.25);
+}
+
+.hero-cloud--right {
+  right: 0;
+  background: rgba(255, 180, 80, 0.25);
+}
+
+/* ===============================
+   CHARACTER LAYER
+================================ */
+.hero-characters {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-character {
+  position: absolute;
+  bottom: -10px;
+  max-height: 85%;
+  object-fit: contain;
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+
+  filter:
+    brightness(0.95)
+    contrast(1.1)
+    saturate(1.05)
+    drop-shadow(0 20px 40px rgba(0,0,0,0.6))
+    drop-shadow(0 0 25px rgba(255,180,80,0.25));
+
+  mask-image: linear-gradient(to top, transparent 0%, black 25%);
+
+  animation: floatSlow 6s ease-in-out infinite;
+  transition: all 1.2s ease;
+}
+
+.hero-left { left: 2%; }
+.hero-right { right: 2%; }
+
+.hero.animate-in .hero-character {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ===============================
+   HERO CONTENT
+================================ */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
+}
+
+/* ===============================
+   TYPOGRAPHY
+================================ */
+.hero-eyebrow,
+.hero-names,
+.hero-date,
+.hero-line,
+.hero-scroll-hint {
+  opacity: 0;
+  transform: translate3d(0, 1.25rem, 0);
+  transition:
+    opacity 1s var(--ease-silk),
+    transform 1s var(--ease-silk);
+}
+
+.hero-eyebrow {
+  margin: 0 0 1.2rem;
+  color: #f5d78e;
+  font-size: clamp(0.85rem, 3vw, 1.1rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.hero-names {
+  margin: 0 0 1rem;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(3rem, 10vw, 7rem);
+  line-height: 1;
+  color: #fff;
+
+  text-shadow:
+    0 0 10px rgba(255, 200, 120, 0.7),
+    0 0 30px rgba(255, 180, 80, 0.4);
+}
+
+.hero-name-line { display: block; }
+
+.hero-amp {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  color: #f0c674;
+}
+
+.hero-date {
+  margin: 0 0 1.8rem;
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+/* ===============================
+   LINE + SCROLL
+================================ */
+.hero-line {
+  width: 1px;
+  height: 4rem;
+  margin: 0 auto;
+  background: linear-gradient(180deg, transparent, rgba(255,200,120,0.9), transparent);
+}
+
+.hero-scroll-hint {
+  margin-top: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+.hero.animate-in .hero-eyebrow,
+.hero.animate-in .hero-names,
+.hero.animate-in .hero-date,
+.hero.animate-in .hero-line,
+.hero.animate-in .hero-scroll-hint {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.hero.animate-in .hero-scroll-hint {
+  animation: hero-bob 2.2s ease-in-out infinite;
+}
+
+/* ===============================
+   KEYFRAMES
+================================ */
+@keyframes hero-bob {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, 0.3rem, 0); }
+}
+
+@keyframes floatSlow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+/* ===============================
+   MOBILE FIX (FINAL PERFECT)
+================================ */
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100svh;
+    padding-block: 3.5rem;
+    padding-inline: 1rem;
+  }
+
+  /* BASE */
+  .hero-character {
+    bottom: 0;
+    width: clamp(9rem, 32vw, 14rem);
+    max-width: 36vw;
+    max-height: min(60svh, 28rem);
+    opacity: 0.95;
+
+    transform: translateY(0) scale(1);
+  }
+
+  /* BOY */
+  .hero-left {
+    left: -4%;
+    transform: translateY(0) scale(1);
+  }
+
+  /* GIRL */
+  .hero-right {
+    right: -6%;
+    transform: translateY(0) scale(1.22);
+  }
+
+  /* CONTENT SAFE ZONE */
+  .hero-content {
+    position: relative;
+    z-index: 5;
+    width: min(100%, 30rem);
+    margin-inline: auto;
+    padding-inline: 1rem;
+    text-shadow: 0 0 18px rgba(0,0,0,0.75);
+  }
+
+  /* TEXT */
+  .hero-names {
+    font-size: clamp(3.2rem, 12vw, 5rem);
+  }
+
+  .hero-amp {
+    font-size: clamp(2.4rem, 8vw, 3.5rem);
+  }
+
+  .hero-date {
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+  }
+
+  .hero-eyebrow {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+}
