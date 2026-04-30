@@ -239,9 +239,9 @@
 
   /* GIRL */
   .hero-right {
-    right: -6%;
-    transform: translateY(0) scale(1.22);
-  }
+    right: -2%;   /* bring her closer to center */
+    transform: translateY(0) scale(1.62);  /* stronger visual balance */
+  } 
 
   /* CONTENT SAFE ZONE */
   .hero-content {
