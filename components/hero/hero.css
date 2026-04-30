@@ -284,3 +284,22 @@
   }
 
 }
+/* ===============================
+   TEXT VISIBILITY FIX (FINAL)
+================================ */
+
+/* Make ALL hero text pure white */
+.hero-eyebrow,
+.hero-date,
+.hero-scroll-hint,
+.hero-names,
+.hero-amp {
+  color: #ffffff !important;
+}
+
+/* Improve readability */
+.hero-content {
+  text-shadow:
+    0 0 10px rgba(0,0,0,0.8),
+    0 0 25px rgba(0,0,0,0.6);
+}

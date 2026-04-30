@@ -40,7 +40,9 @@
       "</span>";
     WeddingUtils.setText(
       this.root.querySelector("[data-hero-date]"),
-      this.config.event.dateDisplay + this.config.hero.dateSeparator + this.config.event.venueCity
+      this.config.event.dateDisplay +
+      (this.config.hero.dateSeparator || " · ") +
+      (this.config.event.venueName || "")
     );
     WeddingUtils.setText(this.root.querySelector("[data-hero-scroll]"), this.config.hero.scrollHint);
 

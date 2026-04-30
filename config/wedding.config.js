@@ -88,6 +88,12 @@ window.WEDDING_CONFIG = {
 
     family: [
       {
+       title: "Parents",
+       names: [
+         "K.C Angappan –  A.G Gauthami"
+        ]
+      },
+      {
         title: "Grandparents",
         names: [
           "K. Chandrasekaran – Bannari",
