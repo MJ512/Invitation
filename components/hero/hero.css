@@ -270,3 +270,17 @@
     font-size: clamp(0.9rem, 3vw, 1.1rem);
   }
 }
+/* ===============================
+   FINAL OVERRIDE (FIX GIRL SIZE)
+================================ */
+@media (max-width: 768px) {
+
+  .hero.animate-in .hero-right {
+    transform: translateY(0) scale(1.4) !important;
+  }
+
+  .hero.animate-in .hero-left {
+    transform: translateY(0) scale(1) !important;
+  }
+
+}
